@@ -5,10 +5,21 @@ EasyVGA is a simple library designed to facilitate VGA graphics programming in D
 
 ## Features
 
-- **VGA Mode Initialization**: EasyVGA can set the VGA mode to 320x200 with 256 colors.
-- **2D Vector Creation**: Create 2D vectors with x and y coordinates.
-- **Color Conversion**: Convert RGB values to a VGA 256 color index.
-- **Line Drawing**: Draw lines between two points with a specified color.
+### VGA Mode Initialization
+
+EasyVGA can set the VGA mode to 320x200 with 256 colors.
+
+### 2D Vector Creation
+
+Create 2D vectors with x and y coordinates.
+
+### Color Conversion
+
+Convert RGB values to a VGA 256 color index.
+
+### Line Drawing
+
+Draw lines between two points with a specified color.
 
 ## Usage
 
@@ -59,5 +70,5 @@ Feedback and contributions are welcome. Please send your feedback to dismissd64@
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under **The MIT License**.
 ```
