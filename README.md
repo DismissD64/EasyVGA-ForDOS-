@@ -1,74 +1,58 @@
-```markdown
-# EasyVGA Library for DOS
+# EasyVGA-ForDOS
 
-EasyVGA is a simple library designed to facilitate VGA graphics programming in DOS environments. It provides basic functionality for initializing VGA mode, creating 2D vectors, converting RGB values to VGA color indices, and drawing lines between points with specified colors.
+EasyVGA-ForDOS is a simple library designed to facilitate VGA graphics programming in DOS environments. It provides a set of functions to initialize VGA modes, create and manipulate 2D vectors and points, convert RGB values to VGA color indices, and draw lines between points with specified colors.
 
 ## Features
 
-### VGA Mode Initialization
-
-EasyVGA can set the VGA mode to 320x200 with 256 colors.
-
-### 2D Vector Creation
-
-Create 2D vectors with x and y coordinates.
-
-### Color Conversion
-
-Convert RGB values to a VGA 256 color index.
-
-### Line Drawing
-
-Draw lines between two points with a specified color.
+- **VGA Mode Initialization**: EasyVGA-ForDOS allows you to initialize VGA modes directly from your DOS applications.
+- **2D Vector and Point Manipulation**: Create and manipulate 2D vectors and points with ease.
+- **Color Conversion**: Convert RGB values to VGA color indices for drawing.
+- **Line Drawing**: Draw lines between points with specified colors.
 
 ## Usage
 
 ### Initialization
 
-To initialize VGA mode, call `EasyVGA_Init()`.
+To initialize the VGA mode, call the `EasyVGA_Init` function. This sets the VGA mode to 320x200 with 256 colors.
 
 ```c
 EasyVGA_Init();
 ```
 
-### Creating Vectors
+### Creating Points
 
-To create a 2D vector, use `EasyVGA_Vector2(x, y)`.
-
-```c
-Vector2 vector = EasyVGA_Vector2(10.0f, 20.0f);
-```
-
-### Color Conversion
-
-To convert RGB values to a VGA color index, use `EasyVGA_RGBColor(r, g, b)`.
+Create a point with a 2D vector.
 
 ```c
-EasyVGA_Color color = EasyVGA_RGBColor(255, 0, 0); // Red
+Vector2 pos = EasyVGA_Vector2(100.0f, 100.0f);
 ```
 
 ### Drawing Lines
 
-To draw a line between two points with a specified color, use `EasyVGA_CreateLine(line)`.
+Draw a line between two points with a specified color using the `EasyVGA_CreateLine` function.
 
 ```c
-EasyVGA_Line line;
-line.point1 = EasyVGA_Vector2(10.0f, 20.0f);
-line.point2 = EasyVGA_Vector2(30.0f, 40.0f);
-line.color = EasyVGA_RGBColor(255, 0, 0); // Red
-line.thickness = 1.0f; // Note: This parameter is not used in the current implementation
-EasyVGA_CreateLine(line);
+Vector2 point1 = EasyVGA_Vector2(50.0f, 50.0f);
+Vector2 point2 = EasyVGA_Vector2(200.0f, 200.0f);
+EasyVGA_Color color = EasyVGA_RGBColor(255, 0, 0); // Red color
+EasyVGA_Line line = EasyVGA_CreateLine(line);
 ```
 
 ## Compilation
 
-This code is designed to be compiled for DOS using a DOS compiler like Turbo C or Borland C++. For detailed compilation instructions, refer to the comments within the source code.
+To compile this code for DOS, you can use a DOS compiler like Turbo C or Borland C++. Here's a basic example of how you might compile the code using Turbo C:
+
+1. Open Turbo C.
+2. Load the `EasyVGA.c` file.
+3. Compile the code by selecting the appropriate options for your DOS environment.
+4. If successful, you will get an executable file that you can run in DOS.
 
 ## Contributing
 
-Feedback and contributions are welcome. Please send your feedback to dismissd64@gmail.com.
+Contributions are welcome! If you have any feedback or suggestions for improvements, please feel free to contact the maintainer at dismissd64@gmail.com.
 
 ## License
 
-This project is licensed under **The MIT License**.
-```
+EasyVGA-ForDOS is open-source software licensed under the MIT License. See the `LICENSE` file for more details.
+
+<!MakeEdit index="0" startLine="1" endLine="2" file="file:///home/user/Documents/EasyVGA%28ForDOS%29/README.md" type="replace" title="Update README.md" />"
