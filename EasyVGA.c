@@ -23,17 +23,6 @@ Vector2 EasyVGA_Vector2(float x, float y) {
     return vector;
 }
 
-// Function to create a point with a 2D vector position
-typedef struct {
-    Vector2 pos;
-} Point;
-
-Point EasyVGA_CreatePoint(Vector2 pos) {
-    Point point;
-    point.pos = pos;
-    return point;
-}
-
 // Function to convert RGB values to a VGA 256 color index
 typedef int EasyVGA_Color;
 
@@ -44,17 +33,17 @@ EasyVGA_Color EasyVGA_RGBColor(int r, int g, int b) {
 
 // Function to draw a line between two points with a specified color
 typedef struct {
-    Point point1;
-    Point point2;
+    Vector2 point1;
+    Vector2 point2;
     EasyVGA_Color color;
     float thickness; // Note: This parameter is not used in the current implementation
-} Line;
+} EasyVGA_Line;
 
-void EasyVGA_CreateLine(Line line) {
-    int x1 = line.point1.pos.x;
-    int y1 = line.point1.pos.y;
-    int x2 = line.point2.pos.x;
-    int y2 = line.point2.pos.y;
+void EasyVGA_CreateLine(EasyVGA_Line line) {
+    int x1 = line.point1.x;
+    int y1 = line.point1.y;
+    int x2 = line.point2.x;
+    int y2 = line.point2.y;
 
     int dx = abs(x2 - x1);
     int dy = abs(y2 - y1);
@@ -69,7 +58,6 @@ void EasyVGA_CreateLine(Line line) {
         video_memory[index + 1] = (line.color >> 8) & 0xFF; // Green
         video_memory[index + 2] = (line.color >> 16) & 0xFF; // Red
         video_memory[index + 3] = 0xFF; // Alpha (ignored in this implementation)
-
         if (x1 == x2 && y1 == y2) break;
         int e2 = 2 * err;
         if (e2 > -dy) { err -= dy; x1 += sx; }
